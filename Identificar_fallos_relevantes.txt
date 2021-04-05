@@ -1,0 +1,14 @@
+Identificar fallos relevantes
+
+Fecha, Cantidad total de fallos, cantidad de fallos relevantes y n° de ingreso de los fallos relevantes
+
+Por extension -> mayor a 4 paginas o peso del archivo o fallo
+              -> filtro de cantidad de paginas variable
+
+
+Web scraping a hacer:
+
+    * https://www.pjud.cl/estado-diario
+    * Bajar a Estado Diario
+    * Jurisdiccion -> Seleccionar Corte Suprema
+    * Tribunal -> Seleccionar Corte Suprema

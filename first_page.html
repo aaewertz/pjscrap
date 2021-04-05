@@ -1,0 +1,668 @@
+<html><head>
+      <link rel="icon" type="image/x-icon" href="images/favicon-1.png">
+      <title>Oficina Judicial Virtual</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <meta name="description" content="Oficina Judicial Virtual">
+      <link rel="stylesheet" href="assets/css/main.css?ver=13">
+      
+      <link rel="stylesheet" type="text/css" href="/jbility/css/jbility.css?ver=10">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="/cssN/returnToTop.css" rel="stylesheet" type="text/css" media="screen">
+      <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css" />
+      </noscript>
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+      <!-- Main Stylesheet File -->
+      <link href="assets/css/style.css" rel="stylesheet">
+      <link href="assets/css/color-74c9be.css" rel="stylesheet">
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/jquery-confirm.css">
+      <link rel="stylesheet" href="assets/css/index.css?ver=4">
+
+      <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/4eHYAlZEVyrAlR9UNnRUmNcL/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-nfmMVdkjvrnzkQS6VWFhGFripZ9s4Dq0Y3QImuDgCBdyW1qZiwIFHYBbsZBnGbIl"></script><script type="text/javascript">
+      
+      
+         function accesoClaveUnicaDDEE()
+         {
+             document.location.href="https://ojv.pjud.cl/kpitec-ojv-web/views/login.html";
+         }
+         function accesoConsulta10()
+         {
+            document.location.href="https://oficinajudicialvirtual.pjud.cl/consulta10.php";v
+         }
+         function accesoSegundaClaveDDEE(){
+             document.location.href="https://ojv.pjud.cl/kpitec-ojv-web/views/login.html";
+         }
+         function accesoConsultaCausas()
+         {
+           var accesoConsultaCausas	= 'CC'
+            $.post("../includes/sesion-invitado.php", { nombreAcceso:accesoConsultaCausas }, function(data){
+               localStorage.setItem('InitSitioOld', '0');
+               localStorage.setItem('InitSitioNew', '1');
+               localStorage.setItem('logged-in', true);
+               sessionStorage.setItem('logged-in', true);
+            document.location.href="https://oficinajudicialvirtual.pjud.cl/indexN.php";
+             });
+         }
+         function accesoInvitado(){
+            var accesoInvitado	= 'B'
+            $.post("../includes/sesion-invitado.php", { nombreAcceso:accesoInvitado }, function(data){
+               localStorage.setItem('InitSitioOld', '0');
+               localStorage.setItem('InitSitioNew', '1');
+               localStorage.setItem('logged-in', true);
+               sessionStorage.setItem('logged-in', true);
+            document.location.href="https://oficinajudicialvirtual.pjud.cl/indexN.php";
+             });
+         }
+         function accesoTramiteFacil(){
+             document.location.href="http://tramitefacil.pjud.cl/kpitec-ojv-web/tramite_facil";
+         }
+         function accesoCertificadoDisponibilidad(){
+             document.location.href="https://oficinajudicialvirtual.pjud.cl/home/certificados_disponibilidad.php";
+         }
+         function accesoTribunalesMasCercanos(){
+	
+            var accesoInvitado	= 'TMC'
+            $.post("../includes/sesion-invitado.php", { nombreAcceso:accesoInvitado }, function(data){
+               localStorage.setItem('InitSitioOld', '0');
+               localStorage.setItem('InitSitioNew', '1');
+               localStorage.setItem('logged-in', true);
+               sessionStorage.setItem('logged-in', true);
+               parent.location.href = 'https://oficinajudicialvirtual.pjud.cl/indexN.php';
+             });
+         }
+		 
+		 function verRemates()
+		 {
+		 	var accesoInvitado	= 'REMA'
+            $.post("../includes/sesion-invitado.php", { nombreAcceso:accesoInvitado }, function(data){
+               localStorage.setItem('InitSitioOld', '0');
+               localStorage.setItem('InitSitioNew', '1');
+               localStorage.setItem('logged-in', true);
+               sessionStorage.setItem('logged-in', true);
+               parent.location.href = 'https://oficinajudicialvirtual.pjud.cl/indexN.php';
+             });
+		 }
+		 
+      </script>
+
+
+   </head>
+   <body class="landing">
+
+      <div id="imagen-banner">
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="segunda-clave-access" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <form name="frmseg" id="fSGN">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Acceso a Oficina Judicial Virtual</h5>
+                  </div>
+                  <div class="modal-body">
+                     Para tener acceso con tu Clave Poder Judicial, debes configurarla al acceder por primera vez a la
+                     plataforma con tu Clave Única.
+                     <div class="row form-style">
+                        <div class="input-field col-11 text-center">
+                           <input id="rut" type="text" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" class="form-control" placeholder="Ingrese Rut, Ej: 12345678" title="Ingrese Rut" maxlength="8"> 
+                           <label for="rut">RUT</label>
+                        </div>
+                     </div>
+                     <div class="row form-style">
+                        <div class="input-field col-11 text-center">
+                           <input id="password" type="password" value="" class="form-control" placeholder="" title="Ingrese Clave"> 
+                           <label for="password">Contraseña</label>
+                           <a id="recPass" class="right olvide-pass" href="#sgdClave" style="color:blue; margin-left: 20px">Olvidé mi Contraseña</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                     <button type="button" class="btn btn-primary" id="btnSegundaClaveIngresar">Ingresar</button>
+                  </div>
+               </div>
+         
+         </div></form>
+      </div>
+      <!--Modal End-->
+      <!--Modal: modalPush-->   
+      
+      <div style="position: absolute; top: 0px;left: 5px"><img src="images/LogoPJUD.png" style="width: 15rem; margin-bottom: 5rem"></div>
+      <div style="position: absolute; top: 0px; width: 100%; color: #FFF;">
+      <!-- Page Wrapper -->
+      <div id="page-wrapper">
+      <!-- Banner -->
+      <section id="banner">
+         <div class="inner tipo">
+		 
+            <h2 style="margin-bottom: 5rem; margin-top: 15rem">Oficina Judicial Virtual</h2>
+         	<!--   
+               <div class="container" style="background-color:rgba(38,38,38,0.6); padding-top:15px; padding-bottom:15px;">Por mejoras internas en la plataforma de ingreso de demandas y escritos esta no estará disponible el jueves 14 de enero, de 8:00 a 10:00 am .</div>
+			-->
+               
+            <br>
+
+
+
+<div class="container">
+   <div class="row">
+      <div class="col-sm-4 resp">
+         <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()" style="border-radius: 10px;" title="Para navegar a traves de las opciones presione enter y utilice las teclas de desplazamiento" tabindex="1">Todos los servicios</button>
+            <div id="myDropdown" class="dropdown-content">
+               <a href="#" onclick="AutenticaCUnica();" tabindex="2"><img src="images/clave_unica-01.png" style="width: 2rem; margin-top: 1px; margin-right:10px;margin-bottom: 3px;">Clave Única</a>
+               <a href="#" id="btnSegClave" data-toggle="modal" data-target="#segunda-clave-access" tabindex="3">Clave Poder Judicial</a>
+            </div>
+         </div>
+      </div>
+      <!-- /.col-sm-4 -->
+      <div class="col-sm-4 resp">
+         <div class="dropdown">
+            <button class="dropbtn" onclick="accesoClaveUnicaDDEE()" style="border-radius: 10px;" tabindex="4" title="Ingreso de causas y escritos"> Ingreso de causas y escritos</button>
+            <!--
+			<div  id="myDropdown2" class="dropdown-content">
+               <a href="#" onclick="accesoClaveUnicaDDEE();" tabindex="5"><img src="images/clave_unica-01.png" style="width: 2rem; margin-top: 1px; margin-right:10px;margin-bottom: 3px;" >Clave Única</a>
+               <a href="#" onclick="accesoSegundaClaveDDEE();" tabindex="6" id="btnSegClave" >Segunda Clave</a>
+            </div>
+			-->
+         </div>
+      </div>
+      <!-- /.col-sm-4 -->
+      <div class="col-sm-4 resp">
+         <div class="dropdown" id="focus">
+            <button class="dropbtn" onclick="myFunction3()" tabindex="7" style="border-radius: 10px;" title="Para navegar a traves de las opciones presione enter y utilice las teclas de desplazamiento">Otros servicios</button>
+            <div id="myDropdown3" class="dropdown-content show">
+               <a href="#" onclick="accesoConsultaCausas();" tabindex="8">Consulta de Causas</a>
+               <a href="#" onclick="accesoInvitado();" tabindex="9">Como Invitado</a>
+               <a href="#" onclick="accesoCertificadoDisponibilidad();" tabindex="10">Certificado de Disponibilidad</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- /.row -->
+   <div class="row">
+      <div class="col-sm-4 resp">
+         <div class="dropdown" id="focus">
+            <button class="dropbtn" onclick="accesoTramiteFacil()" tabindex="11" style="border-radius: 10px;" title="Trámite fácil">Trámite Fácil</button>
+         </div>
+      </div>
+
+      <div class="col-sm-4 resp">
+         <div class="dropdown" id="focus">
+            <button class="dropbtn" onclick="accesoConsulta10()" tabindex="11" style="border-radius: 10px;" title="Trámite fácil">Consulta 10% AFP</button>
+         </div>
+      </div>
+      <!-- /.col-sm-6 -->
+      <div class="col-sm-4 resp br">
+         <div class="dropdown" id="focus">
+            <button class="dropbtn" onclick="accesoTribunalesMasCercanos();" tabindex="12" style="border-radius: 10px; line-height: 18px" title="Guía de atención de público durante la pandemia">Guía de atención de público</button>
+         </div>
+      </div>
+      <!-- /.col-sm-6 -->
+   </div>
+   <!-- /.row -->
+      <!-- /.row -->
+   <div class="row">
+      <div class="col-sm-4 resp">
+        
+      </div>
+
+      <div class="col-sm-4 resp">
+         <div class="dropdown" id="focus">
+            <button class="dropbtn" onclick="verRemates();" tabindex="12" style="border-radius: 10px;" title="Audiencia de remates">Audiencia de remates</button>
+         </div>
+      </div>
+      <!-- /.col-sm-6 -->
+      <div class="col-sm-4 resp br">
+         
+      </div>
+      <!-- /.col-sm-6 -->
+   </div>
+   <!-- /.row -->
+</div>
+<!-- /.container -->
+
+
+
+
+
+
+            
+               <div class="row">
+                  <div class="container banner5">
+                     <div class="col text-center" style="margin-top:2rem">
+                        <p style="font-size: 10px">Navegadores compatibles:</p>
+                        <img src="images/browser.png?ver=3" class="img-fluid" alt="" width="200px" height="auto">
+                     </div>
+                  </div>
+               </div>
+               <div class="arrow bounce" style="margin-top: 2rem">
+                  <a class="fa fa-chevron-circle-down fa-2x" onclick="javascript:bajarASeccion();" style="border-bottom:none!important"></a>
+               </div>
+      </div></section>
+      <!--Banner End-->
+      <!-- Nuevo -->
+      <section id="one" class="wrapper alt style2">
+      <section class="spotlight">
+      <div class="image"><img src="images/pic01.jpg" alt="" height="100%"></div>
+      <div class="content tipo2">
+      <section id="one" class="wrapper alt style2">
+      <div class="container" style="width: 100%">
+      <h2 style="width: 100%">¿Tienes Dudas?</h2>
+      <p>Escoge alguna de las siguientes opciones o para mas información sobre la <strong style="color:#fff">Oficina Judicial
+      Virtual (OJV)</strong><a href="nosotros.php">accede acá </a></p>
+      <ul class="features">
+      <li class="icon fa-bus">
+      <h4>Bus de la Justicia</h4>
+      <p>Para recibir orientación jurídica sobre el estado de causas y trámites simples que no requieran comparecencia o patrocinio de abogados, puede comunicarse por Messenger en el siguiente acceso <a style="border-bottom:none!important" title="Messenger" href="https://m.me/108493167509857" target="_blank"><i class="fab fa-facebook-messenger fa-2x"></i>
+
+      </a></p><a href="nosotros.php" style="margin-top: 2px"></a>
+      </li>
+      <li class="icon fa-headphones">
+      <h4>Mesa de ayuda y Call Center</h4>
+     <p> Para asesoría en el uso de la Oficina Judicial Virtual, puede comunicarse a los números
+      <strong style="color:#fff; font-size:15px">24977048 - 224977041 - 224977042 - 224977043 - 224977044- 224977046</strong>,
+      de lunes a viernes, de 8:00 a 17:00 horas o escribir en la opción <a href="http://www.tramitacionelectronica.cl/lte-responde/" target="_blank" style="color:#FFF">LTE
+      Responde.</a></p>
+												
+                                        <a href="tel:+56 2 2497 7040" target="_blank" class="button fit tertiary" style="margin-top: 2px; width:40%">Llamar</a>
+
+                                        <a href="http://www.tramitacionelectronica.cl/lte-responde/" class="button fit tertiary" target="_blank" style="margin-top: 2px; width:40%">Escribir</a>
+
+                                    </li>
+                                    <li class="icon fa-file-alt">
+                                        <h4>Manuales y Normativas </h4>
+                                        <p> Conoce las normas aplicables a la tramitación electrónica y los manuales de
+                                            uso para las diferentes secciones de la <strong style="color:#fff">OJV</strong>.
+                                        </p>
+                                        <a href="videosymanuales.php" class="button fit tertiary" style="margin-top: 2px">Ver</a>
+                                    </li>
+                                    <li class="icon fa-question">
+                                        <h4>Preguntas Frecuentes</h4>
+                                        <p>Respuesta a las consultas más habituales sobre la tramitación electrónica y
+                                            el funcionamiento de la <strong style="color:#fff">OJV</strong>.
+                                        </p>
+                                        <a href="FAQ.php" class="button fit tertiary" style="margin-top: 2px">Ver</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+
+                </section>
+
+            </section>
+
+            <!--Nuevo End-->
+
+
+            <!-- Site Footer -->
+            <footer class="site-footer">
+                <div class="container" style="width: 100%">
+     		 <div class="row flexthis">
+                        <div class="col-sm-12 col-md-3">
+                            <h6><img src="images/LogoPJUD.png" style="width: 15rem; margin-left: 5rem"></h6>
+                            <p class="text-justify"></p>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+                            <h6>Oficina Judicial Virtual</h6>
+                            <ul class="footer-links no-indent">
+                                <li><a href="nosotros.php">Conoce la Oficina</a></li>
+                                <li><a href="certificados_disponibilidad.php">Certificados de
+                                        Disponibilidad</a></li>
+                                <li><a href="condicionesdeuso.php">Condiciones de
+                                        Uso</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+                            <h6>Sitios de Interés</h6>
+                            <ul class="footer-links">
+                                <li><a target="_blank" href="https://claveunica.gob.cl/">Clave Única</a></li>
+                                <li><a target="_blank" href="http://www.tramitacionelectronica.cl/">Tramitación Electrónica</a></li>
+                                <li><a target="_blank" href="https://www.chileatiende.gob.cl/">Chile Atiende</a></li>
+                                <li><a target="_blank" href="https://www.mediacionchile.cl/AML/Account/Login/">Solicitar Hora para
+                                        Mediación Familiar</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+
+                            <h6>Ayuda</h6>
+
+                            <ul class="footer-links no-indent">
+                                <li><a href="videosymanuales.php">Normativa y Manuales</a></li>
+                                <li><a href="FAQ.php">Preguntas Frecuentes</a></li>
+                                <li><a href="http://www.tramitacionelectronica.cl/lte-responde/">LTE Responde</a></li>
+                                <li><a href="tel:2 24977040">Call Center LTE. 2 24 97 70 40</a></li>
+								
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" id="btn-modal" style="display:none;">Large modal</button>
+								<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+											</div>
+											<div class="modal-body">
+											<p align="justify">&nbsp;El acceso a nuestras plataformas conocido como <b>"Segunda Clave"</b> pasa a llamarse "Clave del Poder Judicial", en atención a lo dispuesto en el Acta 85-2019 de la Corte Suprema.<br>Recuerde que para obtenerla debe ingresar a la opción <b>"Mis Datos"</b> de la Oficina Judicial Virtual con su Clave Única del Estado y le servirá de respaldo cuando esta última presente algún inconveniente.</p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-modal">Cerrar</button>
+										   </div>
+									   </div>
+									</div>
+								</div>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                </div>
+
+                <div class="container" style="width: 100%">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6 col-xs-12">
+
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <ul class="social-icons">
+                                <li><a class="facebook" target="_blank" href="https://www.facebook.com/PoderJudicialdeChile/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="twitter" target="_blank" href="https://twitter.com/PJudicialChile"><i class="fab fa-twitter"></i></a></li>
+                                <li><a class="Instagram" target="_blank" href=""><i class="fab fa-instagram"></i></a></li>
+                                <li><a class="tv" target="_blank" href="http://www.poderjudicialtv.cl/"><i class="fas fa-tv"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <!--Site Footer End-->
+
+        </div>
+    </div>
+
+
+
+
+
+<form action="" method="post" name="frm" id="formSSGGNN" class="col ">
+    <input type="hidden" name="rut" id="rut">
+    <input type="hidden" name="password" id="password">
+    <input type="hidden" value="1" name="ACCESO" id="ACCESO">
+	<input type="hidden" id="g-recaptcha-response-seg-clave_hn" name="g-recaptcha-response-seg-clave_hn">
+	<input type="hidden" name="action" id="action" value="validate_captcha_seg_clave_hn">
+</form>
+
+
+ <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalHome" style="display:none;" id="modalhome">
+  modal home
+</button>
+
+
+<!--
+<div id="acess-container" class="acess-container test">
+		<div class="balloon"><span class="balloontext">Contraste</span><img id="contrast" src="/jbility/img/contraste40.png" /></div>
+		<div class="balloon"><span class="balloontext">Aumentar Fuente</span><img id="increaseFont" src="/jbility/img/fontsma40.png" /></div>
+		<div class="balloon"><span class="balloontext">Disminuir Font</span><img id="decreaseFont" src="/jbility/img/fontsme40.png" /></div>
+</div>
+-->
+	
+<div class="modal fade" id="no-disponible" tabindex="-1" role="dialog" aria-labelledby="modalHome" aria-hidden="true">
+        <form name="frmseg" id="fSGN">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Acceso a Oficina Judicial Virtual</h5>
+                    </div>
+                    <div class="modal-body">
+                        Temporalmente, el acceso con Clave Única no se encuentra disponible.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                   </div>
+               </div>
+        
+    </div></form>
+</div>
+
+
+
+
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/jquery-confirm.js"></script>
+
+    <!--
+
+	<script type="text/javascript" src="/jbility/js/jbility.js?ver=72"></script>
+-->
+ <!--
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+-->
+ <!--
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  -->
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LelLWkUAAAAANPDMkBxllo_QJe5RQVpg6V2pIDt"></script>
+  
+
+
+
+<script>
+    //document.getElementById("focus").focus();
+    var nav4 = document.all ? false : true;
+
+    function acceptNum(evt){    
+
+    // NOTE: Backspace = 8, Enter = 13, '0' = 48, '9' = 57
+
+    var key = nav4 ? evt.which : evt.keyCode;   
+
+    return (key <= 13 || (key >= 48 && key <= 57));
+
+    }
+    
+    function AutenticaCUnica(){ 
+		$("#cuform").submit();
+    }
+
+    function bajarASeccion()
+    {
+            $("html,body").animate({ scrollTop : $("#one").offset().top  }, 1500 )
+    }
+     
+	 
+    $(document).ready(function ()
+    {
+
+        $('#recPass').click(function(){//alert('press');
+					
+			var rut = $('#rut').val();
+			if(rut=="")	{
+				
+				$.alert({
+					title: 'Aviso!',
+					content: 'Por favor Ingresar Rut',
+					btnClass: 'btn-blue',
+					type: 'blue',
+					useBootstrap: false,
+					boxWidth: '20%'
+				});
+				
+			}else{
+				$.confirm({
+                    confirmButton: 'Aceptar',			
+					confirmButtonClass: 'btn btn-primary',
+					cancelButton: 'Cancelar',					
+					cancelButtonClass: 'btn-danger',
+					title: 'Aviso!',
+					content: '¿Desea recuperar su clave?',
+					confirm: function(){
+						//alert('confrimed');
+						//---------------------------------------------------
+						$.ajax({
+							url			: 'includes/recupera-pass.php',
+							type		: 'POST',
+							dataType	: 'html',
+							data    	:{
+									rut : rut
+								}
+						})
+						.done(function(data) {
+
+							$.alert({
+								confirmButton: 'Aceptar',
+								title: 'Mensaje',
+								content: data
+
+							});
+						})
+						//---------------------------------------------------
+					},
+					cancel:function(){
+						//alert('cancelar');
+					}
+					
+				})
+
+			}
+			
+		});
+
+        $('#btnSegundaClaveIngresar').click(function ()
+        {       
+            var rut=$('#rut').val();
+            var clave=$('#password').val();
+
+            if(rut=="" || rut==null || clave=="" || clave==null)
+            {
+                $.alert({					
+                    title: 'Aviso!',
+                    content: 'Por favor Ingresar Rut/Clave',
+					/*
+                    btnClass: 'btn-blue',
+                    type: 'blue',
+                    useBootstrap: false,
+                    boxWidth: '20%',
+					confirmButton: 'Aceptar'*/
+                });
+                return false;
+            }
+			
+			grecaptcha.ready(function() {
+				grecaptcha.execute('6LelLWkUAAAAANPDMkBxllo_QJe5RQVpg6V2pIDt', {action:'validate_captcha_seg_clave_hn'})
+					  .then(function(token) {
+						  
+						  document.getElementById('g-recaptcha-response-seg-clave_hn').value = token;
+						  var acceso_paso = document.forms["frm"]["ACCESO"].value;
+						  var action_paso = document.forms["frm"]["action"].value;
+						  var g_recaptcha_clave_paso = document.forms["frm"]["g-recaptcha-response-seg-clave_hn"].value;
+						  
+						  document.forms["frmseg"]["btnSegundaClaveIngresar"].disabled = true;
+						  
+						  $("#formSSGGNN").load("../sessionN.php", {'ACCESO':acceso_paso, 'g-recaptcha-response-seg-clave_hn':g_recaptcha_clave_paso, 'rut':rut, 'password':clave});
+							
+				});
+			});
+		
+			return false;
+
+                     
+
+        });
+
+
+        $('.cerrar').on('click', function () {
+
+            $('.modal').modal('close');
+        });
+
+        $('#segunda-clave-access').on('hidden.bs.modal', function (e) {
+
+            $('.landing').css('padding-right', '0px');
+        });
+		
+	//$( "#modalhome" ).click();
+		
+		
+		//$('#btn-modal').click();
+		
+        });
+</script>
+<!--Modal Script End-->
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+function myFunction2() {
+  document.getElementById("myDropdown2").classList.toggle("show");
+}
+
+
+function myFunction3() {
+  document.getElementById("myDropdown3").classList.toggle("show");
+}
+
+
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+
+
+
+<a href="javascript:" id="return-to-top"><i class="fas fa-arrow-up fa-2x"></i></a>
+<script type="text/javascript" src="/js/returnToTop.js"></script>
+
+
+
+
+
+<form id="cuform" action="initCU.php" method="POST">
+	<input type="hidden" name="acceso" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvb2ZpY2luYWp1ZGljaWFsdmlydHVhbC5wanVkLmNsIiwiYXVkIjoiaHR0cHM6XC9cL29maWNpbmFqdWRpY2lhbHZpcnR1YWwucGp1ZC5jbCIsImlhdCI6MTYxNTA0MzY2NSwiZXhwIjoxNjE1MDQ1NDY1LCJkYXRhIjp7InNlc3Npb25pZCI6IjJkY2U4YWRkZDM2NTUzZTliMTA3MDM0ZTBiOTJjODgxIn19.YqTsnpCLU4ssfSCsPJ7QFGHvdxG_k_cCXfL3JYL6y_w">
+</form>
+
+
+
+
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LelLWkUAAAAANPDMkBxllo_QJe5RQVpg6V2pIDt&amp;co=aHR0cHM6Ly9vZmljaW5hanVkaWNpYWx2aXJ0dWFsLnBqdWQuY2w6NDQz&amp;hl=en&amp;v=4eHYAlZEVyrAlR9UNnRUmNcL&amp;size=invisible&amp;cb=fyusopgyvaiw" width="256" height="60" role="presentation" name="a-h6xgokmfjyod" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div></body></html>

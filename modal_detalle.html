@@ -1,0 +1,346 @@
+<div class="modal in" id="modalDetalleSuprema" tabindex="-1" style="z-index: 1040; display: block;"><script>$("#primInstaMsj").removeAttr("style");</script><script>$("#capelaMsj").removeAttr("style");</script><script>
+$(document).ready(function(){
+//---- TOOLTIPS DEL ROL -----	
+	$(".topToolNom").tooltip({ placement: "bottom" });
+//----------------------------------------------
+});
+</script>
+
+<!--[if IE]>
+<style>
+    .panel-default {
+         margin-top: 30px;
+    }
+</style>
+<![endif]-->
+
+
+	<div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							<h4 class="modal-title" style="color:#337ab7;">Detalle Causa Suprema</h4>
+			</div>
+		
+			<div class="modal-body">
+			
+				<div class="panel with-nav-tabs">
+				
+					<div class="panel-heading">
+						<ul class="nav nav-tabs" style="display:inline-block">
+							<li class="active"><a data-toggle="tab" href="#corteSuprema">Corte Suprema</a></li>
+							<li><a data-toggle="tab" href="#corteApelaciones">Expediente Corte Apelaciones</a></li>
+							<li><a data-toggle="tab" href="#primeraInstancia">Expediente Primera Instancia</a></li>
+						</ul>
+					</div>			
+				
+				
+					<div class="tab-content">
+				
+				
+						<div class="tab-pane fade in active" id="corteSuprema"> <!-- INICIO PANEL -->
+							<div class="panel panel-default">
+								<table class="table table-responsive table-titulos">
+									<tbody>
+										<tr>
+												<td><strong>Libro :</strong> Civil / 17239 - 2021</td>
+												<td><strong>Fecha :</strong> 05/03/2021</td>
+												<td colspan="2"><strong>Caratulado:</strong> FISCO -EJÉRCITO DE CHILE/CATEPILLÁN</td>
+										</tr>
+										<tr>
+												<td><strong>Estado Procesal:</strong> Ingresado</td>
+												<td><strong>Ubicación:</strong> Corte suprema</td>
+												<td colspan="2"><strong>Tipo:</strong> (Civil) Hecho</td>
+										</tr>
+									</tbody>
+								</table>
+										
+								<table class="table table-responsive table-titulos">
+									<tbody>
+										<tr>
+											<td>
+												<strong>Texto Recurso:</strong><br>
+												<a data-toggle="modal" href="#modalTextoSuprema" title="Texto Recurso" onclick="textoSuprema('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvb2ZpY2luYWp1ZGljaWFsdmlydHVhbC5wanVkLmNsIiwiYXVkIjoiaHR0cHM6XC9cL29maWNpbmFqdWRpY2lhbHZpcnR1YWwucGp1ZC5jbCIsImlhdCI6MTYxNTA2NDQ3MiwiZXhwIjoxNjE1MDY4MDcyLCJkYXRhIjp7InJvbF9jYXVzYSI6IjE3MjM5IiwiZXJhX2NhdXNhIjoiMjAyMSIsImNvZF9jb3J0ZSI6IjEiLCJjb2RfbGlicm8iOiIxIn19.GOPtzaa3iyA1pNOJCvRbYwmHv7dw9bX-RK-m4vUVhCM');"><i class="fa fa-folder fa-lg" aria-hidden="true" style="cursor:pointer; color:#D7B926"></i></a>
+											</td>
+											<td>
+												<strong>Tomo:</strong><br>
+												<a data-toggle="modal" href="#modalTomoSuprema" title="Tomo" onclick="tomoSuprema('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvb2ZpY2luYWp1ZGljaWFsdmlydHVhbC5wanVkLmNsIiwiYXVkIjoiaHR0cHM6XC9cL29maWNpbmFqdWRpY2lhbHZpcnR1YWwucGp1ZC5jbCIsImlhdCI6MTYxNTA2NDQ3MiwiZXhwIjoxNjE1MDY4MDcyLCJkYXRhIjp7InJvbF9jYXVzYSI6IjE3MjM5IiwiZXJhX2NhdXNhIjoiMjAyMSIsImNvZF9jb3J0ZSI6IjEiLCJjb2RfbGlucm8iOiIxIn19.wk4smsxovAs0ZWBt1kfn4L_TNRgBeFWypG1wiFfwDmU');"><i class="fa fa-folder fa-lg" aria-hidden="true" style="cursor:pointer; color:#D7B926"></i></a>
+											</td>
+											<td>
+												<strong>Documentos:</strong><br>
+												<a data-toggle="modal" href="#modalDocumentosSuprema" title="Documentos" onclick="documentosSuprema('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvb2ZpY2luYWp1ZGljaWFsdmlydHVhbC5wanVkLmNsIiwiYXVkIjoiaHR0cHM6XC9cL29maWNpbmFqdWRpY2lhbHZpcnR1YWwucGp1ZC5jbCIsImlhdCI6MTYxNTA2NDQ3MiwiZXhwIjoxNjE1MDY4MDcyLCJkYXRhIjp7InJvbF9jYXVzYSI6IjE3MjM5IiwiZXJhX2NhdXNhIjoiMjAyMSIsImNvZF9jb3J0ZSI6IjEiLCJjb2RfbGlucm8iOiIxIn19.wk4smsxovAs0ZWBt1kfn4L_TNRgBeFWypG1wiFfwDmU');"><i class="fa fa-folder fa-lg" aria-hidden="true" style="cursor:pointer; color:#D7B926"></i></a>
+											</td>
+											<td>
+											  <!-- Bloque boton Certificado -->
+												<strong>Certificado de Envío:</strong>
+												<form name="certCivil" action="ADIR_871/suprema/documentos/docCertificadoDemanda.php" method="get" target="cert">
+													<input type="hidden" name="dtaCert" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvb2ZpY2luYWp1ZGljaWFsdmlydHVhbC5wanVkLmNsIiwiYXVkIjoiaHR0cHM6XC9cL29maWNpbmFqdWRpY2lhbHZpcnR1YWwucGp1ZC5jbCIsImlhdCI6MTYxNTA2NDQ3MiwiZXhwIjoxNjE1MDY4MDcyLCJkYXRhIjp7ImNvZENlcnRpZmljYWRvIjoiNTEyMTY4MjUifX0.KxIsCAaWODU79PSQGxDimpcUSRV2pEaTon418L4TMHc">
+                          <a href="#" onclick="$(this).closest(&quot;form&quot;).submit();" title="Descargar Certificado">
+                            <i title="Descargar Certificado" class="fa fa-file-pdf-o fa-lg" aria-hidden="true" style="color:#ab5659; cursor:pointer;"></i><span class="sr-only">Descargar Certificado</span>
+                          </a>
+												</form>
+								<!-- Fin Bloque boton Certificado -->
+											</td>
+											
+											<!-- INICIO EBOOK -->
+											<td id="contenedorEbook">
+																							<strong>Ebook:</strong>
+													<form name="form" action="ADIR_871/suprema/documentos/newebooksuprema.php" method="get" target="_blank">
+														<input type="hidden" name="dtaEbook" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvb2ZpY2luYWp1ZGljaWFsdmlydHVhbC5wanVkLmNsIiwiYXVkIjoiaHR0cHM6XC9cL29maWNpbmFqdWRpY2lhbHZpcnR1YWwucGp1ZC5jbCIsImlhdCI6MTYxNTA2NDQ3MiwiZXhwIjoxNjE1MDY4MDcyLCJkYXRhIjp7ImNvZF9jb3J0ZSI6IjEiLCJyb2xfY2F1c2EiOiIxNzIzOSIsImNvZF9saWJybyI6IjEiLCJlcmFfY2F1c2EiOiIyMDIxIn19.3MHFcrpwKeLa5pJr_8eJkQqLZZcZQASsAgdFb74J2v8">
+                            <a href="#" onclick="$(this).closest(&quot;form&quot;).submit();" title="Ebook">
+                              <i title="Descargar Ebook" class="fa fa-file-pdf-o fa-lg" aria-hidden="true" style="color:#ab5659; cursor:pointer;"></i><span class="sr-only">Descargar Ebook</span>
+                            </a>
+													</form>
+												
+											</td>
+											<!-- FIN EBOOK -->
+											
+										</tr>
+									</tbody>
+								</table>
+							</div>
+								<div class="panel-heading">
+						<ul class="nav nav-tabs" style="display:inline-block">
+							<li class="active"><a data-toggle="tab" href="#movimientosSup">Movimientos</a></li>
+							<li><a data-toggle="tab" href="#litigantesSup">Litigantes</a></li>
+							<li><a data-toggle="tab" href="#agregadosSup">Agregados</a></li>
+							<li><a data-toggle="tab" href="#observacionSup">Observación</a></li>
+						</ul>
+					</div>
+					
+					<div class="tab-content">
+						
+						<div class="tab-pane fade in active" id="movimientosSup"> <!-- INICIO PANEL -->
+						
+							<div class="panel panel-default">
+							
+								<div class="table-responsive">
+									
+									<table class="table table-bordered table-striped table-hover">
+										<thead>
+											<tr>
+												<th>Folio</th>
+												<th>Doc.</th>
+												<th>Anexo</th>
+												<th>Año</th>
+												<th>Fecha Trámite</th>
+												<th>Trámite</th>
+												<th>Des. Trámite</th>
+                        <th>Correlativo</th>
+												<th>Salas</th>
+												<th>Estado</th>
+											</tr>												
+										</thead>
+										<tbody>
+												<tr>
+													<td>2</td>
+													<td align="center">
+															<form name="frmPdf" action="ADIR_871/suprema/documentos/docCausaSuprema.php" method="get" target="pdf1">
+															
+															  <div>
+																<input type="hidden" id="valorFile" name="valorFile" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvb2ZpY2luYWp1ZGljaWFsdmlydHVhbC5wanVkLmNsIiwiYXVkIjoiaHR0cHM6XC9cL29maWNpbmFqdWRpY2lhbHZpcnR1YWwucGp1ZC5jbCIsImlhdCI6MTYxNTA2NDQ3MiwiZXhwIjoxNjE1MDY4MDcyLCJkYXRhIjp7ImNycklkRG9jdVJlc29sIjoiNDM1OTkzOCIsImNvZFRpcG9BcmNoaXZvIjoiMyIsImNvZFRpcG9UcmFtaXRlIjoiMiIsImZsZ19kb2NvX3BkZiI6IjAiLCJjb2RfY29ydGUiOiIxIn19.woMt_C67lxZlLUR7t5w4m_l8ryNQYStCwxz79FZo310">
+                                									<a href="#" onclick="$(this).closest(&quot;form&quot;).submit();" title="Descargar Documento"><i title="Descargar Documento" class="fa fa-file-pdf-o fa-lg" aria-hidden="true" style="color:#ab5659; cursor:pointer;"></i><span class="sr-only">Descargar Documento</span></a>
+															  </div>
+															</form>
+													</td>													
+													<td align="center">
+													
+													</td>													
+													<td>2021</td>
+													<td>05/03/2021</td>
+													<td>Otro Tramite</td>
+													<td><span title="Nomenclaturas  :
+    1.CERTIFICACIÓN (EN EL MISMO EXPEDIENTE)" class="topToolNom">CERTIFICADO DE INGRESO</span></td>
+                          <td>120478-2021</td>
+													<td>Unidad Ingreso</td>
+													<td>Bloqueado</td>
+												</tr>
+										 
+										</tbody>
+									</table>
+
+								</div>
+							</div>
+
+						</div> <!-- FIN PANEL -->
+
+
+						<div class="tab-pane fade" id="litigantesSup"> <!-- INICIO PANEL -->
+							<div class="panel panel-default">
+							
+								<div class="table-responsive">
+
+									<table class="table table-bordered table-striped table-hover">
+										<thead>
+											<tr>
+												<th>Sujeto</th>
+												<th>Rut</th>
+												<th>Persona</th>
+												<th>Nombre o Razón Social</th>
+											</tr>												
+										</thead>
+										<tbody>
+											<tr>			
+												<td>RECURRENTE</td>				
+												<td>61806000-4</td>
+												<td>Jurídica                      </td>
+												<td>FISCO -EJÉRCITO DE CHILE  </td>				
+												
+											</tr>
+											<tr>			
+												<td>ABG. RECURRENTE</td>				
+												<td>9772243-9</td>
+												<td>Natural                       </td>
+												<td>ERNESTINA RUTH ISRAEL LOPEZ</td>				
+												
+											</tr>
+											<tr>			
+												<td>RECURRIDO</td>				
+												<td>0-0</td>
+												<td>Natural                       </td>
+												<td>MARIA CATEPILLÁN LOBOS</td>				
+												
+											</tr>
+										</tbody>
+									</table>
+										
+								</div>
+							</div>
+						</div> <!-- FIN PANEL -->
+
+						<div class="tab-pane fade" id="agregadosSup"> <!-- INICIO PANEL -->
+							<div class="panel panel-default">
+								
+								<div class="table-responsive">
+
+									<table class="table table-bordered table-striped table-hover">
+										<thead>
+											<tr>
+												<th>Doc.</th>
+												<th>Folio</th>
+												<th>Año</th>
+												<th>Rit Causa</th>
+												<th>Tribunal</th>
+												<th>Materia</th>
+												<th>Caratulado</th>
+											</tr>												
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+												
+								</div>
+							</div>
+						</div> <!-- FIN PANEL -->
+						
+						
+						<div class="tab-pane fade" id="observacionSup"> <!-- INICIO PANEL -->
+							<div class="panel panel-default">
+								<div class="container-fluid" style="background-color:#F9F9F9; padding:15px;">
+								
+									<div class="row">
+										<div class="col-sm-12">
+										<strong>Tomo Principal:</strong><br>
+										 Nº: 0001    -     Foja Inicial   : 0    -     Foja Final  : 0										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-sm-12">
+											<strong>Naturaleza del Recurso:</strong><br>
+											 NATURALEZA: Sin Naturaleza asignada<br>SALA      : ...<br>MATERIA   : Sin Materia Asignada										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-sm-6">
+											<strong>Trámites: </strong>1										</div>
+										<div class="col-sm-6">
+											<strong>Escritos: </strong>0										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-md-10">
+											<strong>Abogado Suspendido: </strong><br>
+																					</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-sm-6">
+											<strong>Tabla: </strong>--										</div>
+										<div class="col-sm-6">
+											<strong>Número de Oficio: </strong>0-0										</div>
+									</div>
+									<div class="row">
+									</div>
+
+								</div>
+							</div>
+						</div> <!-- FIN PANEL -->
+
+					</div>
+					
+						</div> <!-- FIN PANEL -->
+					
+										
+						<div class="tab-pane fade" id="corteApelaciones"> <!-- INICIO PANEL -->
+							<div class="panel panel-default">
+								<center><div id="capelaMsj" class="alert alert-danger" role="alert"><strong>No Existen Registros.</strong></div></center>
+								<table class="table table-responsive table-titulos">
+									<tbody>
+										<tr>
+											<td><strong>Corte: </strong> </td>
+											<td><strong>Libro: </strong> </td>
+										</tr>
+										<tr>
+											<td><strong>Rol Ing: </strong>  - 																							<a data-toggle="modal" title="" href="#modalDetalleApelaciones" onclick="detalleCausaApelaciones('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvb2ZpY2luYWp1ZGljaWFsdmlydHVhbC5wanVkLmNsIiwiYXVkIjoiaHR0cHM6XC9cL29maWNpbmFqdWRpY2lhbHZpcnR1YWwucGp1ZC5jbCIsImlhdCI6MTYxNTA2NDQ3MiwiZXhwIjoxNjE1MDY4MDcyLCJkYXRhIjp7InJvbGNhdXNhIjpudWxsLCJlcmFjYXVzYSI6bnVsbCwiY29kY29ydGUiOiIwIiwiY29kbGlicm8iOiIwIiwiY29tb2RpbiI6MH19.506UO8tzpfsaxuQfeJmK_3DVzuxetZM5YDkfa-mHqMc');"><i class="fa fa-search fa-lg" aria-hidden="true" style="cursor:pointer; color:#337ab7"></i></a>
+											</td>
+										
+											<td><strong>Recurso: </strong> (Civil) Hecho</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div> <!-- FIN PANEL -->
+					
+					
+						<div class="tab-pane fade" id="primeraInstancia"> <!-- INICIO PANEL -->
+							<div class="panel panel-default">
+								<center><div id="primInstaMsj" class="alert alert-danger" role="alert"><strong>No Aplica.</strong></div></center>
+								<table class="table table-responsive table-titulos">
+									<tbody>
+										<tr>
+											<td><strong>Rol o Rit :</strong>  -  - 																						</td>
+											<td><strong>Ruc :</strong> </td>
+											<td><strong>Fecha Ingreso:</strong> 01/01/1970</td>
+										</tr>
+										<tr>
+											<td colspan="3"><strong>Caratulado:</strong> FISCO -EJÉRCITO DE CHILE/CATEPILLÁN                                                                 </td>
+										</tr>
+											<tr><td colspan="3"><strong>Tribunal:</strong> </td>
+										</tr>
+										<tr>
+											<td colspan="2"><strong>Materia:</strong> </td>
+											<td><strong>País de Origen:</strong>  </td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div> <!-- FIN PANEL -->
+					
+					
+					</div>
+
+					
+				
+				</div>
+				
+			</div>
+			
+        
+			<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+						</div>
+			
+		</div>
+	</div>
+</div>

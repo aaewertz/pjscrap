@@ -1,0 +1,57 @@
+Obtener y filtrar resolucion Diarias Parte 2
+
+https://www2.pjud.cl/
+https://oficinajudicialvirtual.pjud.cl/indexN.php
+
+Estado Diario de Tribunales (OPCIONAL)
+    * Buscar por Fecha
+    * Descargar Excel
+    * Filtrar por no isapre
+    * Obtener lista de Rol-Año
+
+Consulta Unificada
+    Competencia: Corte Suprema
+    Tipo Busqueda: Recurso Corte Suprema
+    Rol
+    Año
+
+    * Abrir Detalle de busqueda (LUPA)
+    * Descargar ultima Resolucion (doc pdf)
+    * Filtrar pdf con numero de paginas mayor o igual 4
+    * Guardar numeroo de rol-año en Excel (OPCIONAL)
+
+
+Parte 1A:
+    * Ingresar a https://oficinajudicialvirtual.pjud.cl/home/index.php#
+    * Cerrar el dialogo
+    * Al Apretar "Otros Servicios", escoger "Consulta de Causas"
+    * En consulta de causas/ consulta unificada,
+    * Seleccionar "Busqueda por Rit"
+    * Luego elegir:
+        + Competencia: Corte Suprema
+        + Tipo Busqueda: Recurso Corte Suprema
+        + Rol (sacado de excel)
+        + Año (sacado de excel)
+    * Esperar que se cargue
+    * Seleccionar la "lupa", esperar a que modal se abra
+    * Obtener direccion (url) para descargar todos los documentos guardando el rol
+    * Cerrar modal
+
+Parte 1B:
+    * Ingresar a https://oficinajudicialvirtual.pjud.cl/home/index.php#
+    * Cerrar el dialogo
+    * Al Apretar "Otros Servicios", escoger "Consulta de Causas"
+    * En consulta de causas/ consulta unificada,
+    * Seleccionar "Busqueda por Fecha"
+    * Luego elegir:
+        + Fecha desde: elegida por comando
+        + Fecha hasta: elegida por comando
+        + Competencia: Corte Suprema
+        + Tipo Busqueda: Recurso Corte Suprema
+    * Esperar que se cargue
+    * Para cada resultado:
+        + Seleccionar la "lupa", esperar a que modal se abra
+        + Obtener direccion (url) para descargar todos los documentos guardando el rol
+        + Cerrar modal
+
+Filtrar (no descargar) cualquier fallo que contenga la palabra "ISAPRE" en su caratula
